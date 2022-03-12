@@ -1,0 +1,26 @@
+{
+  "name": "webii_even_am_00_12_09",
+  "version": "1.0.0",
+  "description": "مدرس دوره های برنامه نویسی سی شارپ و فرانت اند",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamidmatin/WebII_Even_AM_00_12_09.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamidmatin/WebII_Even_AM_00_12_09/issues"
+  },
+  "homepage": "https://github.com/hamidmatin/WebII_Even_AM_00_12_09#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "font-awesome": "^4.7.0"
+  }
+}
