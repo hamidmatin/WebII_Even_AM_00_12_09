@@ -1,0 +1,20 @@
+@import "custom_variable";
+//
+//
+// some code
+//
+//
+
+$is-rounded: true !default;
+$rounded-corner: 4px !default; 
+//
+//
+//
+//
+//
+.some-class {
+  @if $is-rounded {
+    border-radius: $rounded-corner;
+  }
+  padding: 10px;
+}

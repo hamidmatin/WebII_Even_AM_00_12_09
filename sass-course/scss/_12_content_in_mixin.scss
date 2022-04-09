@@ -2,11 +2,16 @@
 @mixin my-mixin-2($color, $bg-color) {
   color: $color;
   background-color: $bg-color;
+  &:hover {
+    background-color: $color;
+    color: $bg-color;
+  }
   @content;
 }
 .my-class-1{
   @include my-mixin-2(blue, yellow)
 }
+// @include mixin(params) { .... }
 .my-class-2{
   @include my-mixin-2($color: red, $bg-color: green){
     padding: 20px;
