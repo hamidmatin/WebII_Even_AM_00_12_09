@@ -1,0 +1,526 @@
+/***** Variables *****/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #353535;
+  background-color: #f1f1f1;
+  margin: 0;
+}
+h1 {
+  font-size: 64px;
+}
+h2 {
+  font-size: 56px;
+}
+h3 {
+  font-size: 48px;
+}
+h4 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 10.66666667px;
+}
+.test-blue {
+  color: #45a4f3;
+}
+.test-primary {
+  color: #45a4f3;
+}
+/************ Nesting ***********/
+/*
+  decendant selector
+  selector1{
+    selector2{
+                        
+    }
+  }
+  
+  child selector
+  selector1{
+    > selector2{
+                        
+    }
+  }
+
+  sibling selector
+  selector1{
+    + selector2{
+                        
+    }
+  }
+  sibling selector
+  selector1{
+    ~ selector2{
+                        
+    }
+  }
+
+  parent selector &
+
+  selector1{
+    &:hover{
+    }
+
+    & + &{
+                        
+    }
+  }
+*/
+.nav {
+  height: 50px;
+  background-color: #353535;
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav ul a {
+  display: block;
+  text-decoration: none;
+  color: #f1f1f1;
+  background-color: #353535;
+  line-height: 50px;
+  padding: 0 16px;
+  outline: none;
+}
+.nav ul a:hover,
+.nav ul a:focus {
+  background-color: #ca1d1d;
+  color: #f1f1f1;
+}
+.nav > ul > li {
+  float: left;
+}
+h2 + p {
+  border-top: 1px solid gray;
+}
+p ~ span {
+  opacity: 0.8;
+}
+p ~ a {
+  color: gainsboro;
+}
+.card-link {
+  background-color: #fff;
+}
+.card-link + .card-link {
+  margin-left: 10px;
+}
+.button-ok {
+  background-image: url("ok.png");
+}
+.button-cancel {
+  background-image: url("cancel.png");
+}
+.button-custom {
+  background-image: url("custom.png");
+}
+/******** dynamic_name ******/
+.btn-primary {
+  color: #45a4f3;
+}
+.alert-primary {
+  background-color: #45a4f3;
+}
+.alert-primary::after {
+  content: url('/new-images/icon.png');
+}
+/******** Variable advance ******/
+.icon {
+  background-image: url('/pics/bgdesert.jpg');
+}
+/**** change variable value ****/
+.icon2 {
+  background-image: url('/new-images/new-icon.jpg');
+}
+/***** variable of variable *****/
+.section {
+  color: #3f3d3d;
+}
+.btn1 {
+  padding: 20px;
+  color: #ff1efb;
+  border: 2px solid #ff1efb;
+  box-shadow: 0 4px 2px #ff1efb;
+}
+.btn2 {
+  padding: 20px;
+  color: #fffb1e;
+  border: 2px solid #fffb1e;
+  box-shadow: 0 4px 2px #fffb1e;
+}
+.btn3 {
+  padding: 20px;
+  background-color: dodgerblue;
+  border: 2px solid #004384;
+}
+/******* Mixins ***********/
+.a {
+  color: red;
+}
+#my-id {
+  background-color: #ccc;
+}
+p {
+  font-size: 18px;
+}
+.use-mixin {
+  padding: 18px;
+  color: red;
+  background-color: #ccc;
+  height: 2em;
+  width: 100px;
+  background-color: #555;
+}
+.use-mixin:hover {
+  background-color: #222222;
+}
+.my-class {
+  padding: 10px;
+  background-color: green;
+}
+.my-class:hover {
+  background-color: #001a00;
+}
+/**
+  variable or property : if(condition, value1, value2)
+
+  condition: A boolean expression
+  value1: A value returned if condition is true.
+  value2: A value returned if condition is not true.
+*/
+.my-class-1 {
+  padding: 10px;
+  height: 20px;
+}
+.my-class-2 {
+  margin-top: 20px;
+  height: 300px;
+  width: 300px;
+}
+.btn {
+  padding: 20px;
+  display: inline-block;
+  border-radius: 4px;
+}
+.without-important {
+  color: red;
+  font-size: 20px;
+  font-weight: 900;
+  font-style: italic;
+}
+.with-imortant {
+  color: red !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  font-style: italic !important;
+}
+/********** Mixin Overloading ************/
+.my-class-3 {
+  color: red;
+}
+.my-class-4 {
+  color: red;
+  font-size: 20px;
+}
+.my-class-5 {
+  background-color: #a5abcf;
+  color: black;
+}
+.my-class-6 {
+  background-color: #750606;
+  color: white;
+}
+.my-class-7 {
+  color: #008000;
+  background-color: #1aff1a;
+  padding-top: 10px;
+  border-color: #008000;
+  padding-bottom: 10px;
+  margin: 20px 20px 20px 20px;
+}
+/******* Functions ********/
+div {
+  padding: 33px;
+}
+/******* Extends ********/
+.unstyled-list,
+nav ul,
+.calss-2 {
+  list-style: none;
+}
+nav ul {
+  background: blue;
+}
+.calss-1,
+.calss-2 {
+  padding: 20px;
+}
+.calss-2 {
+  background-color: green;
+}
+.bucket,
+.some-class-1,
+.extend-all {
+  background-color: lightblue;
+}
+.bucket tr,
+.some-class-2,
+.extend-all tr {
+  color: blue;
+}
+.some-class-1 {
+  margin-top: 20px;
+}
+.some-class-2 {
+  margin-top: 20px;
+}
+.extend-all {
+  margin-bottom: 20px;
+}
+.a.b.test,
+.test.c,
+.a.b.replacement,
+.replacement.c {
+  color: orange;
+}
+.test,
+.replacement {
+  padding: 10px;
+}
+.test:hover,
+.replacement:hover {
+  color: green;
+}
+.replacement {
+  font-size: large;
+}
+/********* List **********/
+.use-list-1 {
+  font-size: 40px;
+  padding: 80px;
+  margin: 50px;
+}
+.icon-40px {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+.icon-50px {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.icon-80px {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.icon-100px {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+/* 
+  range(start, end, step) => generate list of numbers
+
+  start - (optional) The start value e.g. 1 or 1px
+  end - The end value e.g. 5px
+  step - (optional) The amount to increment by
+*/
+.p-1 {
+  padding: 10px;
+}
+.p-2 {
+  padding: 20px;
+}
+.p-3 {
+  padding: 30px;
+}
+.fst-3 {
+  font-size: 10px;
+}
+.fst-2 {
+  font-size: 20px;
+}
+.fst-1 {
+  font-size: 30px;
+}
+/******** Map **********/
+.navbar {
+  display: block;
+}
+@media (min-width: 768px) {
+  .navbar {
+    display: inline-block;
+  }
+}
+@media (min-width: 320px) {
+  .navbar {
+    display: none !important;
+  }
+}
+.one-1 {
+  color: blue;
+}
+.two-2 {
+  color: green;
+}
+.three-3 {
+  color: red;
+}
+@media screen and (min-width: 576px) {
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .col-lg-1 {
+    width: 8.33333333%;
+  }
+  .col-lg-2 {
+    width: 16.66666667%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
+  .col-lg-5 {
+    width: 41.66666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.33333333%;
+  }
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.33333333%;
+  }
+  .col-lg-11 {
+    width: 91.66666667%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .col-xl-1 {
+    width: 8.33333333%;
+  }
+  .col-xl-2 {
+    width: 16.66666667%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.33333333%;
+  }
+  .col-xl-5 {
+    width: 41.66666667%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-7 {
+    width: 58.33333333%;
+  }
+  .col-xl-8 {
+    width: 66.66666667%;
+  }
+  .col-xl-9 {
+    width: 75%;
+  }
+  .col-xl-10 {
+    width: 83.33333333%;
+  }
+  .col-xl-11 {
+    width: 91.66666667%;
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+}
+/********** Main Style *****/
+/*# sourceMappingURL=style.css.map */

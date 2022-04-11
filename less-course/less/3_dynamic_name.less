@@ -1,0 +1,16 @@
+/******** dynamic_name ******/
+@selector: primary;
+@property: color;
+
+@images-folder: '/images';
+
+.btn-@{selector}{
+  @{property}: @primary;
+}
+
+.alert-@{selector}{
+  background-@{property}: @primary;
+  &::after{
+    content: url('@{images-folder}/icon.png');
+  }
+}

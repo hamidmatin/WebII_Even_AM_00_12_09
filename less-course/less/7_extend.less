@@ -1,0 +1,51 @@
+/******* Extends ********/
+.unstyled-list {
+  list-style: none;
+}
+nav ul {
+  &:extend(.unstyled-list);
+  background: blue;
+}
+
+.calss-1{
+  padding: 20px;
+}
+
+.calss-2:extend(.calss-1, .unstyled-list){
+  background-color: green;
+}
+
+.bucket {
+  background-color: lightblue;
+  tr { // nested ruleset with target selector
+    color: blue;
+  }
+}
+
+.some-class-1:extend(.bucket) {
+  margin-top: 20px;
+} 
+
+// nested ruleset is recognized
+.some-class-2:extend(.bucket tr) {
+  margin-top: 20px;
+} 
+
+.extend-all:extend(.bucket all){
+  margin-bottom: 20px;
+}
+
+.a.b.test,
+.test.c {
+  color: orange;
+}
+.test {
+  padding: 10px;
+  &:hover {
+    color: green;
+  }
+}
+
+.replacement:extend(.test all) {
+  font-size: large;
+}

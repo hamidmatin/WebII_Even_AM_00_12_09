@@ -14,6 +14,18 @@
       "type": "shell",
       "command": "lessc less-course/less/less-intro.less less-course/css/less-intro.min.css --source-map --clean-css",
       "problemMatcher": []
+    },
+    {
+      "label": "Compile Less style.less",
+      "type": "shell",
+      "command": "lessc less-course/less/style.less less-course/css/style.css --source-map",
+      "problemMatcher": []
+    },
+    {
+      "label": "Compile Less style.less (Compress)",
+      "type": "shell",
+      "command": "lessc less-course/less/style.less less-course/css/style.min.css --source-map --clean-css",
+      "problemMatcher": []
     }
   ]
 }

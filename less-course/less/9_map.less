@@ -1,0 +1,47 @@
+/******** Map **********/
+@sizes: {
+  mobile: 320px;
+  tablet: 768px;
+  desktop: 1024px;
+};
+.navbar {
+  display: block;
+
+  @media (min-width: @sizes[tablet]) {
+    display: inline-block;
+  }
+  @media (min-width: @sizes[mobile]) {
+    display: none !important;
+  }
+}
+
+//each(@map, {@value, @key, @index})
+
+@set: {
+  one: blue;
+  two: green;
+  three: red;
+};
+
+each(@set, {
+  .@{key}-@{index}{
+    color: @value;
+  }
+}) @medias: {
+  sm: 576px;
+  md: 768px;
+  lg: 992px;
+  xl: 1200px;
+}
+@column-count: 12;
+@col-rang: range(@column-count);
+// change parameter names
+each(@medias,.(@media-value, @media-name, @i) {
+  @media screen and (min-width: @media-value) {
+    each(@col-rang, {
+      .col-@{media-name}-@{value}{
+        width: (100% / @column-count) * @value;
+      }
+    })
+  }
+});

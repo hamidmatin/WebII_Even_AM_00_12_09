@@ -1,0 +1,41 @@
+/********* List **********/
+// @icon-sizes: 40px 50px 80px 100px;
+@icon-sizes: 40px, 50px, 80px, 100px;
+
+.use-list-1 {
+  // extract(@list, index)
+  font-size: extract(@icon-sizes, 1);
+  padding: extract(@icon-sizes, 3);
+  margin: extract(@icon-sizes, 2);
+}
+
+//each(@list, {@value, @index})
+each(@icon-sizes, {
+  .icon-@{value} {
+    display: inline-block;
+    width: @value;
+    height: @value;
+  }
+})
+
+/* 
+  range(start, end, step) => generate list of numbers
+
+  start - (optional) The start value e.g. 1 or 1px
+  end - The end value e.g. 5px
+  step - (optional) The amount to increment by
+*/
+@list : range(10px, 30px, 10);
+each(@list,{
+  .p-@{index}{
+    padding: @value;
+  }
+})
+
+
+each(@list,{
+  @num: length(@list) - @index + 1;
+  .fst-@{num}{
+    font-size: @value;
+  }
+})
